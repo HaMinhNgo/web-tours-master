@@ -1,0 +1,100 @@
+<%- include('includes/heading', {title: title}) %>
+
+<body>
+  <div class="hero">
+    <nav class="hero__header">
+      <div class="myContainer hero__header-content">
+        <div class="hero__left">
+          <img src="images/logo.png" alt="logo">
+        </div>
+        <ul class="hero__right">
+          <li class="hero__item">
+            <a href="/">Home</a>
+          </li>
+          <li class="hero__item">
+            <a href="/about">About</a>
+          </li>
+          <li class="hero__item">
+            <a href="/tours">Tours</a>
+          </li>
+          <li class="hero__item">
+            <a href="/booking">Booking</a>
+          </li>
+          <li class="hero__item hero__item--signin">
+            <a href="/admin">Your account</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero__heading">
+      <h1 class="hero__title">
+        Let's enjoy our tour
+      </h1>
+      <h3 class="hero__desc">
+        Now, you can take your tour with the best discount up to 60%.
+      </h3>
+      <form action="/tours" method="GET">
+        <button class="btn__join--primary mt-4">Join now!!</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="about myContainer">
+    <div class="about__left">
+      <h3 class="primary-heading">Why Choose Us?</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At qui quaerat animi illo tenetur facilis alias ut sed, obcaecati aliquam necessitatibus tempora mollitia? Sequi, voluptatem tenetur aspernatur vero deserunt quia?<br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, excepturi voluptatem repellat reprehenderit itaque temporibus minima eius inventore earum sint at quae suscipit! Tempore, necessitatibus aut hic assumenda iste alias.br
+      </p>
+      <a href="/about" class="btn__link mt-4">Learn more <span> &rarr; </span></a>
+    </div>
+    <div class="about__right">
+      <img src="images/about.jpg" alt="about">
+    </div>
+    
+  </div>
+
+  <div class="myContainer">
+    <hr>
+  </div>
+
+  <div class="tours" id="tours">
+    <div class="myContainer">
+      <h3 class="primary-heading">Choice your awesome tour!</h3>
+      <p>Today the group will travel from Delhi to Agra. Once the capital of India, Agra boasts monuments
+        that epitomize the high point of Mughal architecture. This afternoon you will visit the Agra Fort
+        with its colossal walls and moat. The fort contains wonderful palaces in red sandstone and white
+        marble.</p>
+      <div class="tours__display">
+        <% tours.forEach(tour => { %>
+          <%- include('includes/tourCard.ejs', {tour}) %>
+        <% }) %>
+      </div>
+      <a href="/tours" class="btn__link">Learn more <span> &rarr; </span></a>
+    </div>
+  </div>
+
+  <div class="register">
+    <div class="register__bg">
+    </div>
+    <div class="register__content">
+      <div class="d-flex mb-4">
+          <img src="images/sent-mail.png" height="40" alt="mail">
+          <h4 class="ml-2"> - Do you want to ask anythings?</h4>
+      </div>
+      <div action="#">
+        <div class="register__group">
+          <label for="a">Your email: </label>
+          <input type="text">
+        </div>
+        <div class="register__group">
+          <label for="a">Your email: </label>
+          <textarea name="cax" id="cax" rows="4"></textarea>
+        </div>
+        <button class="btn__join--primary">Submit letter!</button>
+      </div>
+    </div>
+  </div>
+<script>
+</script>
+  <%- include('includes/footing.ejs') %>

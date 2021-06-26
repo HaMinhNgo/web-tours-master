@@ -1,0 +1,130 @@
+
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(45deg, rgba($primary-color, .5), rgba($secondary-color, .75)), 
+                    url("../../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  z-index: 1;
+
+  &__header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #ffffff, $alpha: .3);
+    width: 100%;
+
+    &--black {
+      position: fixed;
+      z-index: 10000;
+      background-color: rgba($color: #2f6445, $alpha: .9) !important;
+    }
+  }
+
+  &__header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+  &__left {
+    img {
+      height: 6rem;
+    }
+  }
+
+  
+  &__right {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    align-items: center;
+
+    li {
+      margin: 0;
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 2.7rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: $third-color;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        &.light {
+          color: white;
+        }
+      }
+
+      &::before {
+        content: "";
+        height: .3rem;
+        width: 100%;
+        background-color: $third-color;
+        position: absolute;
+        bottom: -.7rem;
+        left: 0;
+        transform: scaleX(0);
+        transition: all .3s;
+        &.light {
+          background-color: white !important;
+        }
+      }
+
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+    
+  }
+
+  &__item--signin{
+    padding: .5rem .7rem;
+    background-color: #fff;
+    border-radius: 6px;
+    display: block;
+    transition: all .2s;
+    a {
+      color: $secondary-color !important;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      a {
+        color: rgb(15, 121, 55) !important;
+      }
+    }
+
+    &:hover::before {
+      transform: scaleX(0) !important;
+    }
+  }
+
+  &__heading {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    letter-spacing: .55rem;
+  }
+
+  &__desc {
+    line-height: 4rem;
+    letter-spacing: .15rem;
+    font-size: 1.45rem;
+    font-weight: 400;
+  }
+}

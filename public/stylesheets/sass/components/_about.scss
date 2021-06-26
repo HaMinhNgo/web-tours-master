@@ -1,0 +1,27 @@
+
+.about {
+  display: flex;
+  margin-top: 7rem !important;
+  margin-bottom: 7rem;
+  &__left {
+    flex: 2;
+    margin-right: 5rem;
+    p{
+      line-height: 1.6;
+      text-align: justify;
+    }
+  }
+  &__right {
+    flex: 3;
+    img {
+      height: 95%;
+      border-radius: 1rem;
+      transition: all .3s;
+
+      &:hover {
+        transform: translateY(-.5rem);
+        box-shadow: 3px 4px 21px -5px rgba(0,0,0,0.48);
+      }
+    }
+  }
+}
